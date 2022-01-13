@@ -4,6 +4,9 @@
     <title>Ecommerce Template</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="{{asset("assets/css/bootstrap.css")}}" rel="stylesheet">
     <link href="{{asset("assets/css/ui.css")}}" rel="stylesheet">
     <link href="{{asset("assets/css/responsive.css")}}" rel="stylesheet">
@@ -103,10 +106,10 @@
                 <aside class="col-md col-6">
                     <h6 class="title">Brands</h6>
                     <ul class="list-unstyled">
-                        <li> <a href="#">Adidas</a></li>
-                        <li> <a href="#">Puma</a></li>
-                        <li> <a href="#">Reebok</a></li>
-                        <li> <a href="#">Nike</a></li>
+                        <li> <a href="#">Asus</a></li>
+                        <li> <a href="#">Hp</a></li>
+                        <li> <a href="#">Dell</a></li>
+                        <li> <a href="#">Lenovo</a></li>
                     </ul>
                 </aside>
                 <aside class="col-md col-6">
@@ -135,7 +138,7 @@
                         <li> <a href="#"> User Login </a></li>
                         <li> <a href="#"> User register </a></li>
                         <li> <a href="#"> Account Setting </a></li>
-                        <li> <a href="#"> My Orders </a></li>
+                        <li> <a href="#"> My blabla </a></li>
                     </ul>
                 </aside>
                 <aside class="col-md">
@@ -152,12 +155,12 @@
 
         <section class="footer-bottom row">
             <div class="col-md-2">
-                <p class="text-muted">   2021 Company name </p>
+                <p class="text-muted">   2021 al-attar</p>
             </div>
             <div class="col-md-8 text-md-center">
                 <span  class="px-2">info@com</span>
-                <span  class="px-2">+000-000-0000</span>
-                <span  class="px-2">Street name 123, ABC</span>
+                <span  class="px-2">+968451924</span>
+                <span  class="px-2">Street al-thoura 123, aaa</span>
             </div>
             <div class="col-md-2 text-md-end text-muted">
                 <i class="fab fa-lg fa-cc-visa"></i>

@@ -1,7 +1,7 @@
 <x-x-layout>
 
 <!-- ========================= SECTION left nav MAIN ========================= -->
-    <x-left-nav/>
+    <x-left-nav :banners="$back"/>
 <!-- ========================= SECTION MAIN END// ========================= -->
 
 <!-- ========================= SECTION  ========================= -->
@@ -10,85 +10,23 @@
 
         <header class="section-heading">
             <a href="#" class="btn btn-outline-primary float-end">See all</a>
-            <h3 class="section-title">Popular products</h3>
+            <h3 class="section-title">Popular Brands :</h3>
         </header><!-- sect-heading -->
 
 
         <div class="row">
             @foreach($brands as $brand)
-            <div class="col-md-3 p-2">
-                <div href="#" class="card p-2 card-product-grid">
-                    <a href="#" class="img-responsive img-wrap card-img d-block p-6 m-2"> <img src="{{asset("storage/img/".$brand->path_image)}}"/> </a>
+            <div class="container col-5 ">
+                <div class="card p-2 card-product-grid">
+                    <a href="#" class="  img-wrap p-6 m-2 d-block"> <img src="{{asset("storage/img/".$brand->path_image)}}"alt="brand img" /> </a>
                     <figcaption class="info-wrap">
-                        <a href="#" class="title">Just another product name</a>
+                        <a href="#" class="title">{{$brand->name}}</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
             @endforeach
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/2.jpg" alt="ez"/> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Some item name here</a>--}}
-{{--                        <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/3.jpg"> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Great product name here</a>--}}
-{{--                        <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/4.jpg"> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Just another product name</a>--}}
-{{--                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/5.jpg"> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Just another product name</a>--}}
-{{--                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/6.jpg"> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Some item name here</a>--}}
-{{--                        <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/7.jpg"> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Great product name here</a>--}}
-{{--                        <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
-{{--            <div class="col-md-3">--}}
-{{--                <div href="#" class="card card-product-grid">--}}
-{{--                    <a href="#" class="img-wrap"> <img src="assets/images/items/9.jpg"> </a>--}}
-{{--                    <figcaption class="info-wrap">--}}
-{{--                        <a href="#" class="title">Just another product name</a>--}}
-{{--                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->--}}
-{{--                    </figcaption>--}}
-{{--                </div>--}}
-{{--            </div> <!-- col.// -->--}}
+
         </div> <!-- row.// -->
 
     </div><!-- container // -->
@@ -97,6 +35,11 @@
 <!-- ========================= SECTION  END// ========================= -->
     <section class="section-name padding-y-sm">
         <div class="container">
+
+            <header class="section-heading">
+                <a href="#" class="btn btn-outline-primary float-end">See all</a>
+                <h3 class="section-title">Popular products</h3>
+            </header><!-- sect-heading -->
             <div class="row">
                 @foreach($brands as $brand)
                     @foreach($brand->laptop as $lap)
@@ -133,10 +76,11 @@
 {{--            </div>--}}
 {{--        </div> <!-- row.// -->--}}
 {{--    </div><!-- container // -->--}}
+    </div>
 </section>
 <!-- ========================= SECTION  END// ======================= -->
 
 
-
+</section>
 <!-- ========================= FOOTER ========================= -->
 </x-x-layout>

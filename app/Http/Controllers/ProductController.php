@@ -32,7 +32,7 @@ class ProductController extends Controller
 
             $i++;
         }
-        return view('test', compact('brands'));
+        return view('test', compact('brands','back'));
 
 //        return view('welcome',compact('background','title1','title2','title3','brands',"accessories"));
     }
