@@ -10,15 +10,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner ">
         <div class="item active h-100 ">
-            <img style="height:300px ; width: 100%"  src="{{(asset("storage/img/".$banners[0]->path_image))}}" height="100" alt="Los Angeles">
+            <img style="height:300px ; width: 100%"  src="{{(asset("img/".$banners[0]->path_image))}}" height="100" alt="Los Angeles">
         </div>
 
         <div class="item">
-            <img style="height:300px; width: 100%" src="{{(asset("storage/img/".$banners[1]->path_image))}}" height="100" alt="Chicago">
+            <img style="height:300px; width: 100%" src="{{(asset("img/".$banners[1]->path_image))}}" height="100" alt="Chicago">
         </div>
 
         <div class="item">
-            <img style="height:300px;width: 100%" src="{{(asset("storage/img/".$banners[2]->path_image))}}" height="100" alt="New York">
+            <img style="height:300px;width: 100%" src="{{(asset("img/".$banners[2]->path_image))}}" height="100" alt="New York">
         </div>
     </div>
 

@@ -18,7 +18,7 @@
             @foreach($brands as $brand)
             <div class="container col-5 ">
                 <div class="card p-2 card-product-grid">
-                    <a href="#" class="  img-wrap p-6 m-2 d-block"> <img src="{{asset("storage/img/".$brand->path_image)}}"alt="brand img" /> </a>
+                    <a href="#" class="  img-wrap p-6 m-2 d-block"> <img src="{{asset("img/".$brand->path_image)}}"alt="brand img" /> </a>
                     <figcaption class="info-wrap">
                         <a href="#" class="title">{{$brand->name}}</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->

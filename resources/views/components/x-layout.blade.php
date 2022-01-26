@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ecommerce Template</title>
+    <title>Alattar company</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-2 col-4">
-                    <img class="col-6 "  src="{{asset("storage/img/lo.png")}}"/>
+                    <img class="col-6 "  src="{{asset("img/lo.png")}}"/>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <form action="#" class="search">
@@ -42,11 +42,19 @@
                         <div class="widget-header icontext">
                             <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
                             <div class="text">
-                                <span class="text-muted">Welcome!</span>
+                                @auth()
+                                <span class="text-muted">Welcome! {{ Auth::user()->name}}</span>
+                                    <div>
+                                        <a href="/logout">logout</a>
+                                    </div>
+                                @endauth
+                                @guest()
                                 <div>
-                                    <a href="#">Sign in</a> |
-                                    <a href="#"> Register</a>
+                                    <span class="text-muted">Welcome! </span>
+                                    <a href="/login">Sign in</a> |
+                                    <a href="/signup"> Register</a>
                                 </div>
+                                    @endguest
                             </div>
                         </div>
 

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\ProductController;
+use \App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/',[\App\Http\Controllers\ProductController::class,'getIndexx']);
 
+Route::group(['namespace' => 'App\Http\Controllers'],function (){
+    Route::get('/',[ProductController::class,'getIndex']);
+    Route::get('/product/{id}',[ProductController::class,'getProductView']);
+    Route::get('/login',[AuthController::class,'getLoginForm']);
+    Route::post('/login',[AuthController::class,'postLogin']);
+    Route::get('/signup',[AuthController::class,'getSignup']);
+    Route::post('/user/register',[AuthController::class,'register']);
+    Route::get('/logout',[AuthController::class,'logout']);
 
-Route::get('/',[\App\Http\Controllers\ProductController::class,'getIndex']);
-Route::get('/product/{id}',[\App\Http\Controllers\ProductController::class,'getProductView']);
+
+
+});
+
+
 
