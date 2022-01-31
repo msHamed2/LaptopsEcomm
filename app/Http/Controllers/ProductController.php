@@ -32,19 +32,25 @@ class ProductController extends Controller
 
             $i++;
         }
-        return view('test', compact('brands','back'));
+        return view('Homepage', compact('brands', 'back'));
 
 //        return view('welcome',compact('background','title1','title2','title3','brands',"accessories"));
     }
 
     public function getIndexx()
     {
-        return view('test');
+        return view('Homepage');
     }
 
-    public function getProductView(Request $request, Lap $id)
+    /*
+     * @Parm  Lap $product
+     * @return view
+     * */
+
+    public function getProductView(Lap $product)
     {
-        return view('product');
+
+        return view('product', compact('product'));
     }
 }
 

@@ -18,14 +18,14 @@ use \App\Http\Controllers\AuthController;
 
 Route::group(['namespace' => 'App\Http\Controllers'],function (){
     Route::get('/',[ProductController::class,'getIndex']);
-    Route::get('/product/{id}',[ProductController::class,'getProductView']);
     Route::get('/login',[AuthController::class,'getLoginForm']);
     Route::post('/login',[AuthController::class,'postLogin']);
     Route::get('/signup',[AuthController::class,'getSignup']);
     Route::post('/user/register',[AuthController::class,'register']);
     Route::get('/logout',[AuthController::class,'logout']);
-
-
+});
+Route::group(['prefix' => '/product/{product}'],function (){
+    Route::get('',[ProductController::class,'getProductView']);
 
 });
 

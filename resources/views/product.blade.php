@@ -1,3 +1,7 @@
 <x-x-layout>
-    <h1> hello </h1>
+   <div class="container">
+
+       <x-product :product="$product" class="col-10"/>
+
+   </div>
 </x-x-layout>
