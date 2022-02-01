@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\ProductService;
 use App\Models\Accessory;
 use App\Models\Background;
 use App\Models\Brand;
@@ -10,6 +11,13 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService=$productService;
+    }
+
     public function getIndex()
     {
 
@@ -49,8 +57,8 @@ class ProductController extends Controller
 
     public function getProductView(Lap $product)
     {
-
-        return view('product', compact('product'));
+      $laptops=  $this->productService->getRelatedProducts($product);
+        return view('product', compact('product','laptops'));
     }
 }
 

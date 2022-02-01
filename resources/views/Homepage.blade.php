@@ -43,18 +43,25 @@
             <div class="row">
                 @foreach($brands as $brand)
                     @foreach($brand->laptop as $lap)
-<x-product :product="$lap"/>
-{{--                    <div class="col-md-3">--}}
-{{--                        <div href="#" class="card card-product-grid">--}}
-{{--                            <a href="#" class="img-wrap  d-block p-6 m-2"> <img src="{{asset("storage/img/".$lap->image1)}}"/> </a>--}}
-{{--                            <figcaption class="info-wrap">--}}
-{{--                                <a href="/product/{{$lap->id_lap}}" class="title">{{$lap->name}}</a>--}}
-{{--                                <p class="title">{{$lap->specification->processor}}</p>--}}
+{{--<x-product :product="$lap"/>--}}
 
-{{--                                <div class="price mt-1">{{$lap->price}}</div> <!-- price-wrap.// -->--}}
-{{--                            </figcaption>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+
+
+
+
+                    <div class="col-md-3">
+                        <div href="#" class="card card-product-grid">
+                            <a href="#" class="img-wrap  d-block p-6 m-2"> <img src="{{asset("img/".$lap->image1)}}"/> </a>
+                            <figcaption class="info-wrap">
+                                <a href="/product/{{$lap->id_lap}}"  class="title">{{$lap->name}}</a>
+                                <strong class="text-body">Details:</strong>
+                                <p>{{$lap->specification->ram}} </p>
+                                <p>{{$lap->specification->processor}} </p>
+                                <p>{{$lap->specification->hard}} </p>
+
+                            </figcaption>
+                        </div>
+                    </div>
                         <!-- col.// -->
                 @endforeach
                 @endforeach

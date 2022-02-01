@@ -1,7 +1,14 @@
 <x-x-layout>
-   <div class="container">
+   <div class="container flex-1  ">
+       <div>
+       <x-product :product="$product" class="col-16"/>
+</div>
+{{--       @foreach($laptops as $lap)--}}
+{{--           <x-product :product="$lap" />--}}
+{{--       @endforeach--}}
+       <div class=" p-2 m-4">
+           <x-Suggested :laptops="$laptops"/>
 
-       <x-product :product="$product" class="col-10"/>
-
+       </div>
    </div>
 </x-x-layout>
