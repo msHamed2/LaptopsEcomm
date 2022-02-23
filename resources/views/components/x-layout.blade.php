@@ -36,10 +36,11 @@
                 <div class="col-lg-4 col-sm-6 col-12">
                     <div class="widgets-wrap float-md-end">
                         <div class="widget-header  me-3">
-                            <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-                            <span class="badge badge-pill badge-danger notify">0</span>
+                            <a href="/favorite" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+                            <span class="badge badge-pill badge-danger notify basket-item-count"></span>
                         </div>
-                        <div class="widget-header icontext">
+                        <div class="widget-header icontext ">
+
                             <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
                             <div class="text">
                                 @auth()
@@ -76,7 +77,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -85,9 +86,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Partnership</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Baby &amp Toys</a>
-                    </li>
+
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -108,6 +107,7 @@
 </header> <!-- section-header.// -->
 {{$slot}}
 <footer class="section-footer border-top bg">
+    <x-Map/>
     <div class="container">
         <section class="footer-top  padding-y">
             <div class="row">
@@ -181,3 +181,29 @@
 <!-- ========================= FOOTER END // ========================= -->
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        cartload();
+    });
+
+    function cartload()
+    {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: '/load-cart-data',
+            method: "GET",
+            success: function (response) {
+                $('.basket-item-count').html('');
+                var parsed = jQuery.parseJSON(response)
+                var value = parsed; //Single Data Viewing
+                // $('.basket-item-count').innerText( value['totalcart']);
+                $('.basket-item-count').append($('<span class="badge badge-pill badge-danger notify basket-item-count">'+ value['totalcart'] +'</span>'));
+            }
+        });
+    }
+</script>

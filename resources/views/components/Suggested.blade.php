@@ -1,165 +1,148 @@
 @props(['laptops'])
-<div class="col-md-10">
-<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-    <div class="carousel-inner" style="padding: 1em;">
-        <div class="carousel-item active">
-            <div class="card" style="margin: 0 0.5em;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  border: none;">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link type="text/css" href="../../css/suggested.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;">
-                    <img style=" max-height: 100%;max-width: 100%; padding: 12px;" src="{{asset('img/'.$laptops[0]->image1)}}" class="d-block w-100" alt="..."></div>
-                <div class="card-body">
-                        <h5 class="card-title">{{$laptops[0]->name}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go to details</a>
+<div class="col-md-10 border border-primary">
+
+<div class="container">
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators mb-0 pb-0">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner no-padding my-5">
+            <div class="carousel-item active">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info"><img class="img-fluid card-img-top" src="{{asset('img/'.$laptops[0]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>maiores atque labore fugiat tenetur tempore veritatis temporibus!</p>
+
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top rounded-bottom" src="{{asset('img/'.$laptops[1]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>Lorem eritatis temporibus!</p>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top rounded-bottom" src="{{asset('img/'.$laptops[2]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>
+                        Lorem ipsum
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top" src="{{asset('img/'.$laptops[3]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>Lorem ipsum dolor </p>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top" src="{{asset('img/'.$laptops[4]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit amet
+                    </p>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top" src="{{asset('img/'.$laptops[2]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet consectetur  </p>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top" src="{{asset('img/'.$laptops[4]->image1)}}">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top" src="http://via.placeholder.com/300x300">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="#" onclick=abc(this) class="slider_info">
+                        <img class="img-fluid card-img-top" src="http://via.placeholder.com/300x300">
+                        <div class="card-img-overlay t_img">
+                            <span class="float-left text-uppercase">article</span>
+                            <span class="float-right text-uppercase">2345 views</span>
+                        </div>
+                    </a>
+                    <p>
+                      Sequi nesciunt quam obcaecati maiores atque labore fugiat tenetur tempore veritatis temporibus!
+                    </p>
+
                 </div>
             </div>
         </div>
-        @foreach($laptops as $lap)
-        <div class="carousel-item">
-            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">
-                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;">
-                    <img style=" max-height: 100%" src="{{asset('img/'.$lap->image1)}}" class="d-block w-100" alt="..."></div>
-                <div class="card-body">
-                    <h5 class="card-title">{{$lap->name}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        @endforeach
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 3</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 4</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 5</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 6</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 7</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 8</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="carousel-item">--}}
-{{--            <div class="card" style="margin: 0 0.5em; box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);border: none;">--}}
-{{--                <div class="img-wrapper" style=" max-width: 100%; height: 13em; display: flex; justify-content: center;align-items: center;"><img src="..." class="d-block w-100" alt="..."></div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5 class="card-title">Card title 9</h5>--}}
-{{--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the--}}
-{{--                        card's content.</p>--}}
-{{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon sp"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon sp"></span>
+        </a>
     </div>
-    <button class="carousel-control-prev" style=" background-color: #e1e1e1;
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-    top: 75%;
-
-  transform: translateY(-50%);" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" style=" background-color: #e1e1e1;
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  top: 75%;
-  transform: translateY(-50%);" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
 </div>
-<script>
-    var multipleCardCarousel = document.querySelector(
-        "#carouselExampleControls"
-    );
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-            interval: false,
-        });
-        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-        var cardWidth = $(".carousel-item").width();
-        var scrollPosition = 0;
-        $("#carouselExampleControls .carousel-control-next").on("click", function () {
-            if (scrollPosition < carouselWidth - cardWidth * 4) {
-                scrollPosition += cardWidth;
-                $("#carouselExampleControls .carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-        $("#carouselExampleControls .carousel-control-prev").on("click", function () {
-            if (scrollPosition > 0) {
-                scrollPosition -= cardWidth;
-                $("#carouselExampleControls .carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-    } else {
-        $(multipleCardCarousel).addClass("slide");
-    }
-</script>

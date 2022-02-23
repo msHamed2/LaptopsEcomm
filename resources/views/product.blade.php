@@ -3,9 +3,7 @@
        <div>
        <x-product :product="$product" class="col-16"/>
 </div>
-{{--       @foreach($laptops as $lap)--}}
-{{--           <x-product :product="$lap" />--}}
-{{--       @endforeach--}}
+
        <div class=" p-2 m-4">
            <x-Suggested :laptops="$laptops"/>
 

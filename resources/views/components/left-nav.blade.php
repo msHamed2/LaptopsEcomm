@@ -6,7 +6,7 @@
             <aside class="col-md-3">
                 <nav class="card">
                     <ul class="menu-category">
-                        <li><a href="#">Best sales</a></li>
+                        <li><a href="/#">Best Sales</a></li>
                         <li><a href="#">accsosires</a></li>
                         <li><a href="#">laptops</a></li>
                         <li><a href="#">Electronics</a></li>

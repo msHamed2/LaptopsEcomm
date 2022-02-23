@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $name
  * @property string $price
  * @property string $type
+ * @property int $views
  * @property string $image1
  * @property string $image2
  * @property string $image3
@@ -39,6 +40,7 @@ class Lap extends Model
 		'name',
 		'price',
 		'type',
+        'views',
 		'image1',
 		'image2',
 		'image3',

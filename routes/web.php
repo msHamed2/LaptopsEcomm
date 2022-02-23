@@ -23,6 +23,10 @@ Route::group(['namespace' => 'App\Http\Controllers'],function (){
     Route::get('/signup',[AuthController::class,'getSignup']);
     Route::post('/user/register',[AuthController::class,'register']);
     Route::get('/logout',[AuthController::class,'logout']);
+    Route::post('/add',[\App\Http\Controllers\FavoritesControoller::class,"addtocart"]);
+    Route::get('/load-cart-data',[\App\Http\Controllers\FavoritesControoller::class,"cartload"]);
+    Route::get('/favorite',[\App\Http\Controllers\FavoritesControoller::class,"index"]);
+Route::get('/clearFavorite',[\App\Http\Controllers\FavoritesControoller::class,"Clear"]);
 });
 Route::group(['prefix' => '/product/{product}'],function (){
     Route::get('',[ProductController::class,'getProductView']);

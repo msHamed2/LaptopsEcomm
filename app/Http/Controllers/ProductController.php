@@ -17,6 +17,9 @@ class ProductController extends Controller
     {
         $this->productService=$productService;
     }
+    /*
+        * @return view
+        * */
 
     public function getIndex()
     {
@@ -42,13 +45,9 @@ class ProductController extends Controller
         }
         return view('Homepage', compact('brands', 'back'));
 
-//        return view('welcome',compact('background','title1','title2','title3','brands',"accessories"));
     }
 
-    public function getIndexx()
-    {
-        return view('Homepage');
-    }
+
 
     /*
      * @Parm  Lap $product
@@ -58,6 +57,8 @@ class ProductController extends Controller
     public function getProductView(Lap $product)
     {
       $laptops=  $this->productService->getRelatedProducts($product);
+      $product->views=$product->views+1;
+      $product->save();
         return view('product', compact('product','laptops'));
     }
 }

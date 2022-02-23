@@ -7,55 +7,81 @@ use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+
 class AuthController extends Controller
-{use ApiResponser;
-    public function getLoginForm(){
-        return view('LoginSignUp');
-}
-public function postLogin(Request $request){
+{
+    use ApiResponser;
+    /*
+        * @return view
+        * */
 
-    $attr = $request->validate([
-        'email' => 'required',
-        'password' => 'required',
-
-    ]);
-
-    if (!Auth::attempt($attr)) {
-        return $this->error('Credentials not match', 401);
+    public function getLoginForm()
+    {
+        return view('Authenticate.LoginSignUp');
     }
+    /*
+        * @Parm  Request $request
+        * @return Token
+        * */
 
-    return $this->success([
-        'token' => auth()->user()->createToken('API Token')->plainTextToken
-    ]);
-}
+    public function postLogin(Request $request)
+    {
+
+        $attr = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+
+        ]);
+
+        if (!Auth::attempt($attr)) {
+            return $this->error('Credentials not match', 401);
+        }
+
+        return $this->success([
+            'token' => auth()->user()->createToken('API Token')->plainTextToken
+        ]);
+    }
+    /*
+        * @Parm  Request $request
+        * @return Redirect
+        * */
     public function register(Request $request)
     {
 
 
         $attr = $request->validate([
-            'name'=>'required',
+            'name' => 'required',
             'email' => 'required|unique:users,email|string',
             'password' => 'required|string|min:4',
-            'password_confirm'=>'required|same:password',
-            'gender'=>'required',
+            'password_confirm' => 'required|same:password',
+            'gender' => 'required',
 
         ]);
 
         $user = User::create([
-            'password' =>bcrypt($attr['password']),
+            'password' => bcrypt($attr['password']),
             'email' => $attr['email'],
-            'gender'=>$attr['gender'],
-            'name'=>$attr['name'],
+            'gender' => $attr['gender'],
+            'name' => $attr['name'],
 
         ]);
-session()->regenerate();
+        session()->regenerate();
         Auth::login($user);
         return redirect('/');
     }
-    public function getSignup(){
-        return view('Signup');
+    /*
+        * @return View
+        * */
+    public function getSignup()
+    {
+        return view('Authenticate.Signup');
     }
-    public function logout(Request $request){
+    /*
+        * @Parm  Request $request
+        * @return Redirect
+        * */
+    public function logout(Request $request)
+    {
 
         Auth::guard('web')->logout();
 
